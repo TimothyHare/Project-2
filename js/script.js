@@ -18,12 +18,49 @@ const a = document.createElement("a");
 // Create a function to hide all of the items in the list excpet for the ten you want to show
 // Tip: Keep in mind that with a list of 54 studetns, the last page will only display four
 
+//A function with a parameter of page and students
+const listOfStudents = (page, studentAlias) => {
+
+// A loop that will show ten students
+for(let i =0; i< studentAlias.length; i+=1) {
+
+//if else statement to show or hide students
+if (i >= ((page *10) -10) && i < ((page * 10))){
+  studentAlias[i].style.display ="block";
+}else {
+  studentAlias[i].style.display ="none";
+  }
+ }
+}
+
+// calling function of students
+listOfStudents (1, studentAlias);
+
 
 
 
 // Create and append the pagination links - Creating a function that can do this is a good approach
-
-
+const pages = () => {
+//Class of newDiv adds page  numbers
+newDiv.className = ("pages");
+//Variable that creates element ul
+const ul = document.createElement("ul");
+//Appending newDiv and ul
+page.appendChild(newDiv);
+newDiv.appendChild("ul");
+// loop for anchor tags
+for (let i = 1; i <= numberOfStudents; i++){
+  const li = document.createElement ("li");
+  const a = document.createElement("a");
+  ul.appendChild(li);
+  li.appendChild(a)
+  // page number should be the same as anchor tags
+  a.textContent = "i";
+  a.href = "#"
+}
+}
+//Call pages function
+pages();
 
 
 // Add functionality to the pagination buttons so that they show and hide the correct items
