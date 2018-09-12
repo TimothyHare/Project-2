@@ -41,10 +41,10 @@ listOfStudents (1, studentAlias);
 
 // Create and append the pagination links - Creating a function that can do this is a good approach
 const pages = () => {
+  //Variable that creates element ul
+  const ul = document.createElement("ul");
 //Class of newDiv adds page  numbers
 newDiv.className = ("pages");
-//Variable that creates element ul
-const ul = document.createElement("ul");
 //Appending newDiv and ul
 page.appendChild(newDiv);
 newDiv.appendChild("ul");
