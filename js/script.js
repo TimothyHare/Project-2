@@ -7,7 +7,7 @@ FSJS project 2 - List Filter and Pagination
 // Variable that holds all students name
 const studentAlias = document.getElementsByClassName('student-item cf');
 //Variable that allows only ten student to be shown on page
-const numberOfStudents = math.ceil (studentAlias.length/10);
+const numberOfStudents = Math.ceil(studentAlias.length/10);
 // Variables that recognize page length
 const page = document.querySelector(".page");
 const pageHeader = document.querySelector(".page-header");
@@ -44,10 +44,10 @@ const pages = () => {
   //Variable that creates element ul
   const ul = document.createElement("ul");
 //Class of newDiv adds page  numbers
-newDiv.className = ("pages");
+newDiv.className = ("pagination");
 //Appending newDiv and ul
 page.appendChild(newDiv);
-newDiv.appendChild("ul");
+newDiv.appendChild(ul);
 // loop for anchor tags
 for (let i = 1; i <= numberOfStudents; i++){
   const li = document.createElement ("li");
@@ -55,7 +55,7 @@ for (let i = 1; i <= numberOfStudents; i++){
   ul.appendChild(li);
   li.appendChild(a)
   // page number should be the same as anchor tags
-  a.textContent = "i";
+  a.textContent = i;
   a.href = "#"
 }
 }
@@ -65,3 +65,24 @@ pages();
 
 // Add functionality to the pagination buttons so that they show and hide the correct items
 // Tip: If you created a function above to show/hide list items, it could be helpful here
+
+ newDiv.addEventListener("click", (event){
+//Variable for anchor tags and page number
+let numberOfPages = document.getElemenyByTagName("a")
+//if loop to activate anchor tags whenever clicked
+if (event.target.tagName = "a"){
+  //targets class name of active
+  event.target.className ="active";
+  numberOfPages = event.target.textContent;
+  //shows the right amount of students and student names using listOfStudents function from earlier
+  listOfStudents(numberOfPages, studentAlias);
+}
+  //Change active page when moved to another pages
+  //Variable for active page
+  const active = document.querySelectorAll (".active")
+  //for loop that runs through the active pages
+  for (let i = 0; i< numberOfPages.length; i += 1){
+    active.classList.remove("active");
+  }
+
+ });
