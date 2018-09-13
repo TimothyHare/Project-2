@@ -68,9 +68,9 @@ pages();
 
  newDiv.addEventListener("click", (event) =>{
 //Variable for anchor tags and page number
-let numberOfPages = document.getElemenyByTagName("a")
+let numberOfPages = document.getElementByTagName("a")
 //if loop to activate anchor tags whenever clicked
-if (event.target.tagName === "a"){
+if (event.target.tagName === "A"){
   //targets class name of active
   event.target.className ="active";
   numberOfPages = event.target.textContent;
@@ -79,9 +79,9 @@ if (event.target.tagName === "a"){
 }
   //Change active page when moved to another pages
   //Variable for active page
-  const active = document.querySelectorAll (".active")
+  const active = document.querySelector(".active")
   //for loop that runs through the active pages
-  for (let i = 0; i< numberOfPages.length; i += 1){
+  for (let i = 0; i < numberOfPages.length; i += 1){
     active.classList.remove("active");
   }
 
