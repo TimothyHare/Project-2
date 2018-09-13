@@ -66,11 +66,11 @@ pages();
 // Add functionality to the pagination buttons so that they show and hide the correct items
 // Tip: If you created a function above to show/hide list items, it could be helpful here
 
- newDiv.addEventListener("click", (event){
+ newDiv.addEventListener("click", (event) =>{
 //Variable for anchor tags and page number
 let numberOfPages = document.getElemenyByTagName("a")
 //if loop to activate anchor tags whenever clicked
-if (event.target.tagName = "a"){
+if (event.target.tagName === "a"){
   //targets class name of active
   event.target.className ="active";
   numberOfPages = event.target.textContent;
