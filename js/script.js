@@ -68,7 +68,7 @@ pages();
 
  newDiv.addEventListener("click", (event) =>{
 //Variable for anchor tags and page number
-let numberOfPages = document.getElementByTagName("a")
+let numberOfPages = document.getElementsByTagName("a")
 //if loop to activate anchor tags whenever clicked
 if (event.target.tagName === "A"){
   //targets class name of active
